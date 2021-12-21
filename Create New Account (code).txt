@@ -1,0 +1,88 @@
+
+import java.util.*; 
+
+class Main {
+
+
+  public static String emailAddress(String fname, String lname){
+
+
+    String firstChar = fname.substring(0,1);
+
+
+    String email = firstChar + lname +"@company.com";
+
+
+    return email;
+
+  }
+
+
+  public static String getPassword(String lname, String state, String zipCode){
+
+    String password = lname + state + zipCode;
+
+
+    return password;
+
+  }
+
+
+  public static String backupAddress(String fname, String lname, String state, String zipcode) {
+
+
+    String backupEmail = fname.substring(0,2) + lname.substring(0,3) + state+ zipcode.substring(0,3) +"@company.com";
+
+
+    return backupEmail;
+
+  }
+
+
+ public static void main(String[] args) {
+
+ String firstName, lastName, state, zipCode;
+
+
+  Scanner myScanner = new Scanner(System.in);
+
+
+  System.out.print("Please enter first name: ");
+
+  firstName = myScanner.nextLine();
+
+
+  System.out.print("Please enter last name: ");
+
+  lastName = myScanner.nextLine();
+
+
+  System.out.print("Please enter state: ");
+
+  state = myScanner.nextLine();
+
+
+  System.out.print("Please enter zipcode: ");
+
+  zipCode = myScanner.nextLine();
+
+  String email = emailAddress(firstName, lastName);
+
+  String password = getPassword(lastName, state, zipCode);
+
+  String backupEmail = backupAddress(firstName, lastName, state, zipCode);
+
+
+  System.out.println("\n\nThe account infomation is printed below: ");
+
+
+  System.out.println("Email Address: " + email);
+
+
+  System.out.println("Password: " + password);
+
+
+  System.out.println("Back up Email: " + backupEmail);
+
+ }
+}
